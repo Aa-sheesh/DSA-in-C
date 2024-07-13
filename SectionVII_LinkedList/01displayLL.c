@@ -23,12 +23,30 @@ void create(int A[], int n)
         last = t;
     }
 }
-void display(struct Node *p)
+// void display(struct Node *p)
+// {
+//     while (p != NULL)
+//     {
+//         printf("%d ", p->data);
+//         p = p->next;
+//     }
+// }
+
+void recursiveDisplay(struct Node *p)
 {
-    while (p != NULL)
+    if (p != NULL)
     {
         printf("%d ", p->data);
-        p = p->next;
+        recursiveDisplay(p->next);
+    }
+    
+}
+void recursiveDisplayReverse(struct Node *p)
+{
+    if (p != NULL)
+    {
+        recursiveDisplayReverse(p->next);
+        printf("%d ", p->data);
     }
 }
 
@@ -43,7 +61,9 @@ int main()
     {
         scanf("%d", &A[i]);
     }
-    
+
     create(A, n);
-    display(first);
+    recursiveDisplay(first);
+    printf("\n");
+    recursiveDisplayReverse(first);
 }
