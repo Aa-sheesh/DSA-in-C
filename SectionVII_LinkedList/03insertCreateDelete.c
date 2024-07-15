@@ -103,6 +103,7 @@ int delete(struct Node *n, int pos)
     return x;
 }
 
+// EXTRA FUNCTIONS ON LL
 void sortCheck(struct Node *n)
 {
     struct Node *p, *q;
@@ -138,6 +139,57 @@ void removeDuplicates(struct Node *n)
             free(q);
             q = p->next;
         }
+    }
+}
+
+// REVERSE A LINKED LIST
+// i. Reverse the linked list using an array
+void reverseUsingArray(int B[], struct Node *p)
+{
+    int i;
+    while (p != NULL)
+    {
+        for (i = 0; p != NULL; i++)
+        {
+            B[i] = p->data;
+            p = p->next;
+        }
+    }
+    p = first;
+    i--;
+    for (i; i >= 0; i--)
+    {
+        p->data = B[i];
+        p = p->next;
+    }
+}
+// ii. Reverse the linked list using sliding pointers(linking changes)
+void reverseUsingSlidingPointers(struct Node *p)
+{
+    struct Node *q, *r;
+    q = NULL;
+    r = NULL;
+    while (p != NULL)
+    {
+        r = q;
+        q = p;
+        p = p->next;
+        q->next = r;
+    }
+    first = q;
+}
+// iii. Reverse using Recursion
+void reverseUsingRecursion(struct Node *q, struct Node *p)
+{
+
+    if (p != NULL)
+    {
+        reverseUsingRecursion(p, p->next);
+        p->next = q;
+    }
+    else
+    {
+        first = q;
     }
 }
 
@@ -195,9 +247,30 @@ int main()
     // sortCheck(first);
 
     // REMOVE DUPLICATES
+    // printf("\n");
+    // printf("After removing duplicates: ");
+    // removeDuplicates(first);
+    // display(first);
+
+    // REVERSE A LINKED LIST
+    // i. Reverse the linked list using an array
+    // printf("\n");
+    // printf("Reversing the linked list using an array: ");
+    // int B[n];
+    // reverseUsingArray(B, first);
+    // display(first);
+
+    // ii. Reverse the linked list using sliding pointers(linking changes)
+    // printf("\n");
+    // printf("Reversing the linked list using sliding pointers: ");
+    // reverseUsingSlidingPointers(first);
+    // display(first);
+
+    // iii. Reverse using Recursion
     printf("\n");
-    printf("After removing duplicates: ");
-    removeDuplicates(first);
+    printf("Reversing the linked list using recursion: ");
+    struct Node *q = NULL;
+    reverseUsingRecursion(q, first);
     display(first);
 
     return 0;
