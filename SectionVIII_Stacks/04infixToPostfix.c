@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-struct Node
+    struct Node
 {
     int data;
     struct Node *next;
@@ -148,8 +148,14 @@ int Eval(char *postfix)
 }
 int main()
 {
-    char *postfix = "234*+82/-";
+    // Infix to Postfix
+    // char *infix = "a+b*c-d/e";
+    // push('#');
+    // char *postfix = InToPost(infix);
+    // printf("%s ", postfix);
 
+    // Evaluation of Postfix
+    char *postfix = "234*+82/-";
     printf("Result is %d\n", Eval(postfix));
 
     return 0;
