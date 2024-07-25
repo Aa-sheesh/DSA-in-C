@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.embeddedhtml": "html",
-        "stdlib.h": "c",
-        "iostream": "cpp",
-        "queue.h": "c",
-        "queue": "cpp"
-    }
-}
