@@ -16,8 +16,8 @@
 
 ## Criteria for Analysis:
 
-- Number of comparisons.
-- Number of swaps.
-- Adaptive.
-- Stable.
-- Extra Memory.
+1. Number of comparisons.
+2. Number of swaps.
+3. Adaptive.
+4. Stable.
+5. Extra Memory.
